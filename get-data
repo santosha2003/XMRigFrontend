@@ -1,0 +1,14 @@
+            //    $http.get(json.url + ':' + json.port + ((json.type === 'proxy') ? '/1/summary' : '/')).then(function (data) {
+            //        if (json.type === 'proxy') {
+            //            $http.get(json.url + ':' + json.port + '/1/workers').then(function (w) {
+            //                for (var i = 0; i < w.data.workers.length; i++) {
+            //                    w.data.workers[i][7] = $scope.date(new Date(w.data.workers[i][7]));
+            //                }
+            //                $scope.workers = w.data.workers;
+            //            });
+            //            data.data.uptime = $scope.date(new Date(new Date() - data.data.uptime));
+            //        }
+            //        $scope.res = data.data;
+            //        clearTimeout(x);
+            //        x = setTimeout(update, 5000);
+            //    });

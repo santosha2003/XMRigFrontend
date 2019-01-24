@@ -29,7 +29,7 @@ xmrig.controller('MainController', function ($scope, $http, $mdDialog, $mdSidena
             var json = ($scope.rigs[$scope.currentRig]);
             if (json) {
                 console.log('updating');
-//  angularJS  $http.get use cookies  url: json.url + ':' + json.port + ((json.type === 'proxy') ? '/1/summary' : '/'),
+//              url: json.url + ':' + json.port + ((json.type === 'proxy') ? '/1/summary' : '/'),
             const config = {
               method: 'GET',
               headers: {
@@ -37,12 +37,11 @@ xmrig.controller('MainController', function ($scope, $http, $mdDialog, $mdSidena
                },
             };
             var url = json.url + ':' + json.port + ((json.type === 'proxy') ? '/1/summary' : '/');
-            var urlProxy = json.url + ':' + json.port + '/1/workers';
         //     var url =  (json.url + ':' + json.port + ((json.type === 'proxy') ? '/1/summary' : '/'));
         // 'http://194.135.220.202:13336/';
             $http.get(url,config).then(function (data) {
                     if (json.type === 'proxy') {
-                        $http.get(urlProxy,config).then(function (w) {
+                        $http.get(json.url + ':' + json.port + '/1/workers').then(function (w) {
                             for (var i = 0; i < w.data.workers.length; i++) {
                                 w.data.workers[i][7] = $scope.date(new Date(w.data.workers[i][7]));
                             }

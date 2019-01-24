@@ -32,3 +32,6 @@ If you found a Bug please let me know and create an Issue here!
 ## Enhancements
 You have great Ideas how to make this better?
 Create an Issue with your Idea or open a Pull Request!
+
++ add Bearer authorization - works now.
++ get more info - for Solo mining, correct or not algo?
