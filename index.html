@@ -135,6 +135,7 @@
                         <p>Latency: {{res.results.latency}}ms</p>
                         <p>Total Hashes: {{res.results.hashes_total}} Hashes</p>
                         <p>Donated Hashes: {{res.results.hashes_donate}} Hashes</p>
+                        <p>best.. Solo mined block 63000M +: {{res.results.best[1]}}, {{res.results.best[2]}}</p>
                         <md-divider></md-divider>
                         <h2>Workers</h2>
                         <span ng-repeat="worker in workers track by $index">

@@ -33,13 +33,13 @@ xmrig.controller('MainController', function ($scope, $http, $mdDialog, $mdSidena
             const config = {
               method: 'GET',
               headers: {
-               'Authorization': ' Bearer SMI'
+               'Authorization': ' Bearer ' + json.auth,
                },
             };
             var url = json.url + ':' + json.port + ((json.type === 'proxy') ? '/1/summary' : '/');
             var urlProxy = json.url + ':' + json.port + '/1/workers';
         //     var url =  (json.url + ':' + json.port + ((json.type === 'proxy') ? '/1/summary' : '/'));
-        // 'http://194.135.220.202:13336/';
+        // 'http://194.135.xxx.202:13336/';
             $http.get(url,config).then(function (data) {
                     if (json.type === 'proxy') {
                         $http.get(urlProxy,config).then(function (w) {
